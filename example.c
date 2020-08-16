@@ -53,8 +53,7 @@ int main()
     struct foo foo = { .a=1, .b=2 };
     struct bar bar = { .a=3.14, .b=10, .c="hello world" };
 
-    afprintf(stdout,
-            "Print: int: %d, foo: %Y, str: '%s', bar: %Y, bad one: %Y. The end!\n",
+    aprintf("Print: int: %d, foo: %Y, str: '%s', bar: %Y, bad one: %Y. The end!\n",
             123, FORMAT_FOO(&foo), "some string", FORMAT_BAR(&bar), FORMAT_FOO(NULL));
 
     return 0;

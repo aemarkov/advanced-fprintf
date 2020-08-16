@@ -23,6 +23,8 @@ typedef void(*print_handler)(FILE*, void*);
  * See example.c for more details */
 void afprintf(FILE* f, const char* fmt, ...);
 
+#define aprintf(fmt, ...) afprintf(stdout, fmt, __VA_ARGS__)
+
 
 #ifdef __cplusplus
 };
