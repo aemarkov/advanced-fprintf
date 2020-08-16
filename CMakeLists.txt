@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(advanced-fprintf)
 
-add_library(afprintf SHARED
+add_library(afprintf SHARED 
     afprintf/afprintf.c)
 target_include_directories(afprintf PUBLIC afprintf)
 
@@ -27,8 +27,8 @@ include_directories(${EXTERNAL_INSTALL_LOCATION}/include)
 link_directories(${EXTERNAL_INSTALL_LOCATION}/lib)
 
 add_executable(test test/test.cpp)
-target_link_libraries(test PRIVATE afprintf)
 target_link_libraries(test PRIVATE gtest gtest_main pthread)
 add_dependencies(test googletest)
+target_link_libraries(test PRIVATE afprintf)
 
 

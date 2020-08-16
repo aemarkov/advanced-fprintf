@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 
+#ifdef __cplusplus 
+extern "C" {
+#endif
+
 typedef void(*print_handler)(FILE*, void*);
 /**
  * \brief fprintf with custom type support
@@ -18,5 +22,10 @@ typedef void(*print_handler)(FILE*, void*);
  *
  * See example.c for more details */
 void afprintf(FILE* f, const char* fmt, ...);
+
+
+#ifdef __cplusplus
+};
+#endif
 
 #endif
